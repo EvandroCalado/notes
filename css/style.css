@@ -216,6 +216,7 @@ body {
   font-size: 18px;
   font-weight: 300;
   color: var(--color-1);
+  border-radius: 5px;
 }
 
 .modal-box > input:nth-child(3) {
@@ -247,6 +248,7 @@ body {
   font-size: 18px;
   font-weight: 300;
   color: var(--color-1);
+  border-radius: 5px;
 }
 
 .modal-container-edit {

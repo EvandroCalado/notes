@@ -35,15 +35,12 @@ function closeModalAdd() {
 }
 // Adicionar note
 function addNote() {
-  const inputAddNewNoteValue = inputAddNewNote.value;
-  const textAreaAddNewNoteValue = textAreaAddNewNote.value;
-
-  if (inputAddNewNote.value === "") {
+  if (!inputAddNewNote.value ) {
     inputAddNewNote.classList.add("error");
     setTimeout(() => {
       inputAddNewNote.classList.remove("error");
     }, 2000);
-  } else if (textAreaAddNewNote.value === "") {
+  } else if (!textAreaAddNewNote.value) {
     textAreaAddNewNote.classList.add("error");
     setTimeout(() => {
       textAreaAddNewNote.classList.remove("error");
@@ -51,8 +48,8 @@ function addNote() {
   } else {
     const note = `
       <div class="note">
-              <h3>${inputAddNewNoteValue}</h3>
-              <p>${textAreaAddNewNoteValue}</p>
+              <h3>${inputAddNewNote.value}</h3>
+              <p>${textAreaAddNewNote.value}</p>
               <div class="note-date">
                   <p>${dia}/${mes}/${ano}</p>
                   <i class="fa-solid fa-ellipsis"></i>
@@ -89,24 +86,24 @@ window.document.addEventListener("click", function (e) {
     modalEdit.classList.add("active");
     e.target.parentElement.parentElement.classList.add("editing");
     const editing = document.querySelector(".editing");
+    const editingMenu = document.querySelector(".editing-menu");
     inputEditNote.value = editing.firstElementChild.textContent;
-    textareaEditNote.value =
-      editing.firstElementChild.nextElementSibling.textContent;
+    textareaEditNote.value = editing.firstElementChild.nextElementSibling.textContent;
+    editingMenu.classList.remove("editing-menu");
+    editingMenu.classList.remove("active");
   }
   // Salvar editar note
   if (e.target.classList.contains("button-edit-note")) {
     const editing = document.querySelector(".editing");
-    const editingMenu = document.querySelector(".editing-menu");
     editing.firstElementChild.textContent = inputEditNote.value;
-    editing.firstElementChild.nextElementSibling.textContent =
-      textareaEditNote.value;
+    editing.firstElementChild.nextElementSibling.textContent = textareaEditNote.value;
     modalEdit.classList.remove("active");
     editing.classList.remove("editing");
-    editingMenu.classList.remove("editing-menu");
-    editingMenu.classList.remove("active");
   }
   // Fechar editar note
   if (e.target.classList.contains("close-edit")) {
+    const editing = document.querySelector(".editing");
     modalEdit.classList.remove("active");
+    editing.classList.remove("editing");
   }
 });
