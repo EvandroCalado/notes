@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/a292dabd64.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="modal-container-add">
+      <div class="modal-box">
+        <div class="modal-head">
+          <h3>Add a new Note</h3>
+          <i class="fa-solid fa-x close-add"></i>
+        </div>
+        <h5>Title</h5>
+        <input class="input-add-new-note" type="text" />
+        <h5>Description</h5>
+        <textarea
+          class="textarea-add-new-note"
+          name="textarea"
+          id="textarea"
+          cols="30"
+          rows="6"
+        ></textarea>
+        <input class="button-add-note" type="button" value="Add Note" />
+      </div>
+    </div>
+
+    <div class="modal-container-edit">
+      <div class="modal-box">
+        <div class="modal-head">
+          <h3>Update a Note</h3>
+          <i class="fa-solid fa-x close-edit"></i>
+        </div>
+        <h5>Title</h5>
+        <input class="input-edit-note" type="text" />
+        <h5>Description</h5>
+        <textarea
+          class="textarea-edit-note"
+          name="textarea"
+          id="textarea"
+          cols="30"
+          rows="6"
+        ></textarea>
+        <input class="button-edit-note" type="button" value="Update Note" />
+      </div>
+    </div>
+
+    <div class="notes-container">
+      <div class="notes-add-new" id="notes-add-new">
+        <div class="notes-plus">
+          <i class="fa-solid fa-plus"></i>
+        </div>
+        <p>Add new note</p>
+      </div>
+
+      <div class="note-container"></div>
+    </div>
+  </body>
+</html>
